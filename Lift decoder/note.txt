@@ -1,0 +1,17 @@
+Description
+Decoder to control an elevator (lift) for model trains. The print includes two micro controllers.
+
+The ATMEGA 328 is used to control two stepper motor drivers (X and Y = left and right). Software is intended to be GRBL. Limit switches can be connected via two opto-couplers.
+
+The ATMEGA 2560 is the main processor that:
+
+Sends commands to the GRBL ATMEGA 328
+Receives DCC commands from a DCC master station
+Sends feedback messages via the RS-Bus to the master station
+Has 14 digital inputs for buttons and/or IR receivers (light barriers)
+Has 14 digital outputs for LEDs and/or IR transmitters (light barriers)
+To offload the ATMEGA 2560, the software can be split over multiple PCBs. Communication between the PCBs takes place via a RS485 bus. Only 1 of the PCBs need to receive external power (AC 12-18V), the others may receive power from the main PCB.
+
+Costs for 5 PCBs with all SMD components assembled is around 100 Euro (including tax and shipping). Costs do not include the Through-hole components, such as jumpers and terminals.
+
+Updated 2020/07/14: PAD spacing SS34 reduced
